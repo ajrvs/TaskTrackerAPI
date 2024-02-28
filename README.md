@@ -1,7 +1,8 @@
 # TaskTrackerAPI
+RESTful API for a simple task management system using FastAPI.
+
 ## Project Overview
-#### Problem statement:
-**Problem**: Create a RESTful API for a simple task management system.
+**Problem statement**: Create a RESTful API for a simple task management system.
 
 **Requirements**:
 
@@ -16,18 +17,27 @@
 
 This problem provides a good exercise for building a basic CRUD (Create, Read, Update, Delete) API using FastAPI.
 
-## Work
+## Setup and local execution:
+- Clone the repo: `git clone https://github.com/ajrvs/TaskTrackerAPI.git`
+- Go to the project directory: `cd TaskTrackerAPI`
+- Run the FastAPI application using the Uvicorn ASGI server with automatic reloading enabled for development purposes: `uvicorn main:app --reload`
+- Uvicorn will be running on Port 8000: ([http://127.0.0.1:8000](http://127.0.0.1:8000)) / ([http://localhost:8000](http://localhost:8000))
+
+## Documentation:
+- [ ] update later / ignore for now
 
 `virtualenv env`: create the virtual environment
 
 `env\Scripts\activate`: activate the virtual environment
 
-`pip install fastapi uvicorn`: install fastapi, uvicorn and pydnatic (later install sqlalchemy to store tasks in database)
+`pip install fastapi uvicorn`: install fastapi, uvicorn
 
-main.py file is without using any Database. So, each time the server is restarted. We are back to square one.
+Later install "pydnatic" for input validation and serialization, and "sqlalchemy" for database management (to store tasks in database).
 
-tasks_tracker.py file is using SQLite to store tasks in a Database.
+"main.py" file is without using any Database. So, each time the server is restarted. We are back to square one.
+
+"tasks_tracker.py" file is using SQLite to store tasks in a Database.
 
 To include API documentation using FastAPI's built-in OpenAPI and Swagger UI, you simply need to access the generated documentation at the appropriate URL. FastAPI automatically generates an interactive API documentation page using Swagger UI based on the endpoint definitions and input/output models.
 
-http://localhost:8000/docs: Replace localhost:8000 with the appropriate host and port where your FastAPI application is running if you're using a different host/port configuration.
+http://localhost:8000/docs: Replace localhost:8000 with the appropriate host and port where your FastAPI application is running (if you're using a different host/port configuration).
