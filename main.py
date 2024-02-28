@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, constr
+from pydantic import BaseModel
 from enum import Enum
 
 app = FastAPI()
@@ -15,6 +15,10 @@ class Task(BaseModel):
     status: TaskStatus = TaskStatus.todo
 
 tasks = []
+
+@app.get("/")
+def home():
+    return {"message": "Welcome to Task Tracker API"}
 
 @app.get("/tasks/{status}", response_model=list[Task])
 def get_tasks(status: TaskStatus):
